@@ -1,7 +1,6 @@
 (function () {
 	function AlbumCtrl(fixtures) {
 		var albumData = fixtures.getAlbum()
-			//this.albumData = fixtures.getAlbum();
 		this.name = albumData.name;
 		this.artist = albumData.artist;
 		this.label = albumData.label;
