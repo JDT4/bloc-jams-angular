@@ -7,6 +7,7 @@
 		this.year = albumData.year;
 		this.albumArtUrl = albumData.albumArtUrl;
 		this.songs = albumData.songs;
+		this.songPlayer = SongPlayer;
 	}
 
 	angular
