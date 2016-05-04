@@ -16,7 +16,11 @@
  				formats: ['mp3'],
  				preload: true
  			});
+ 			song.currentIndex = getSongIndex(song);
+
  			SongPlayer.currentSong = song;
+ 			console.log(SongPlayer.currentSong);
+
  		};
 
  		SongPlayer.play = function (song) {

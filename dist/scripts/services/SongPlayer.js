@@ -16,8 +16,11 @@
  				formats: ['mp3'],
  				preload: true
  			});
+ 			song.currentIndex = getSongIndex(song);
+
  			SongPlayer.currentSong = song;
  			console.log(SongPlayer.currentSong);
+
  		};
 
  		SongPlayer.play = function (song) {
@@ -38,12 +41,26 @@
  			song.playing = false;
  			currentBuzzObject.pause();
  		};
+ 		SongPlayer.stop = function () {
+ 			currentBuzzObject.stop();
+ 			SongPlayer.currentSong.playing = null;
+ 		};
  		SongPlayer.previous = function () {
  			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
  			currentSongIndex--;
  			if (currentSongIndex < 0) {
- 				currentBuzzObject.stop();
- 				SongPlayer.currentSong.playing = null;
+ 				SongPlayer.stop();
+ 			} else {
+ 				var song = currentAlbum.songs[currentSongIndex];
+ 				setSong(song);
+ 				SongPlayer.play(song);
+ 			}
+ 		};
+ 		SongPlayer.next = function () {
+ 			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+ 			currentSongIndex++;
+ 			if (currentSongIndex > currentAlbum.songs.length - 1) {
+ 				SongPlayer.stop();
  			} else {
  				var song = currentAlbum.songs[currentSongIndex];
  				setSong(song);
