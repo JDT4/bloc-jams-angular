@@ -8,6 +8,7 @@
 		this.albumArtUrl = albumData.albumArtUrl;
 		this.songs = albumData.songs;
 		this.songPlayer = SongPlayer;
+		console.log(SongPlayer);
 	}
 
 	angular
