@@ -1,4 +1,3 @@
-=== === =
 function SongPlayer(fixtures) {
 	var SongPlayer = {};
 	var currentSong = null;
@@ -115,6 +114,7 @@ function SongPlayer(fixtures) {
 			return SongPlayer;
 		}
 
+		<< << << < HEAD
 		angular
 			.module('blocJams')
 			.factory('SongPlayer', SongPlayer);
@@ -216,7 +216,6 @@ function SongPlayer(fixtures) {
 	}
 	return SongPlayer;
 }
-
 angular
 	.module('blocJams')
 	.factory('SongPlayer', SongPlayer);
