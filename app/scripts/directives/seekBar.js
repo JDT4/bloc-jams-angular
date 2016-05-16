@@ -22,7 +22,6 @@
  				scope.max = 100;
 
  				var seekBar = $(element);
-
  				attributes.$observe('value', function (newValue) {
  					scope.value = newValue;
  				});
@@ -41,6 +40,11 @@
  				scope.fillStyle = function () {
  					return {
  						width: percentString()
+ 					};
+ 				};
+ 				scope.thumbStyle = function () {
+ 					return {
+ 						left: percentString()
  					};
  				};
 
