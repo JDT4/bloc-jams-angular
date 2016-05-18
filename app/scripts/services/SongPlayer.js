@@ -6,7 +6,7 @@
  			return currentAlbum.songs.indexOf(song);
  		}
  		SongPlayer.currentTime = null;
- 		SongPlayer.currentTime = null;
+ 		SongPlayer.currentVolume = 80;
  		var currentBuzzObject = null;
  		var setSong = function (song) {
  			if (currentBuzzObject) {
@@ -23,10 +23,7 @@
  				});
  			});
  			song.currentIndex = getSongIndex(song);
-
  			SongPlayer.currentSong = song;
- 			console.log(SongPlayer.currentSong);
-
  		};
 
  		SongPlayer.play = function (song) {
@@ -73,6 +70,13 @@
  				SongPlayer.play(song);
  			}
  		};
+
+
+ 		SongPlayer.setVolume = function (volume) {
+ 			if (currentBuzzObject) {
+ 				currentBuzzObject.setVolume(volume);
+ 			}
+ 		}
  		SongPlayer.setCurrentTime = function (time) {
  			if (currentBuzzObject) {
  				currentBuzzObject.setTime(time);
