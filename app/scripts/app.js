@@ -25,5 +25,4 @@
 
  	angular.module('blocJams', ['ui.router'])
  		.config(config)
- 		.service('Metric', ['$rootScope', Metric]);
  })();
