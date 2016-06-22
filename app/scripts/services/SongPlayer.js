@@ -74,7 +74,7 @@
 			}
 			setSong(song);
 			SongPlayer.play(song);
-			Metric.skipSongs(song);
+			Metric.skipSongs(song, SongPlayer.currentTime);
 			Metric.trackSongs(song);
 		};
 

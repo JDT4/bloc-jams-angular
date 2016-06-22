@@ -18,11 +18,12 @@
 				songPlays.push(data);
 			},
 			//Skip data
-			skipSongs: function (data) {
+			skipSongs: function (data, time) {
 				//Date of skip
 				data.dateSkipped = 1; //new Date().getTime();
 				//Time of skip
-				data.timeSkipped = $songPlayer.currentTime;
+				data.timeSkipped = time;
+				console.log(data.timeSkipped);
 				//Number of skips
 				data.skips = [];
 				data.skips.push(1);
