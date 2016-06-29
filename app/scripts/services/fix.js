@@ -1,5 +1,5 @@
 (function () {
-	//Album 1
+	//Album 1 
 	var albumPicasso = {
 		name: 'The Colors',
 		artist: 'Pablo Picasso',
