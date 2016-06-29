@@ -29,7 +29,6 @@
 				data.skips.push(1);
 				//Push all data
 				songPlays.push(data);
-				console.log(data.timeSkipped);
 			}
 		};
 	}
