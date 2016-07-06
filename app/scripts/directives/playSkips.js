@@ -8,15 +8,10 @@
  				data: "="
  			},
  			link: function (scope, element, attributes) {
- 				//console.log(scope);
- 				//console.log(element);
- 				//console.log(attributes);
- 				console.log(JSON.stringify(scope.data));
-
  				var myChart = new Chart(element, {
- 					type: "doughnut",
+ 					type: attributes.type,
  					data: scope.data,
- 					options: {},
+ 					options: attributes.options,
  				});
  			}
  		};
