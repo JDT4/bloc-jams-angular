@@ -1,5 +1,5 @@
 <div class="half-content">
-	<h1>The Colors</h1>
+	<h1>All song data</h1>
 	<table class="album-view-song-list">
 		<tr class="album-view-song-item">
 			<td>#</td>
@@ -9,12 +9,18 @@
 			<td>Last played</td>
 		</tr>
 
-		<tr class="album-view-song-item" ng-repeat="song in analytics.analytic track by $index">
+		<tr class="album-view-song-item" ng-repeat="song in analytics.analytic | orderBy:currentIndex track by $index">
 			<td>{{song.currentIndex + 1}}</td>
 			<td>{{song.name}}</td>
 			<td>{{song.plays}}</td>
-			<td>{{song.dateSkipped}}</td>
-			<td>{{song.datePlayed | date:'HH:mm dd/MM/yy'}}</td>
+			<td>{{song.skips}}</td>
+			<td>{{song.datePlayed | date:'dd/MM/yy HH:mm:ss'}}</td>
+
 		</tr>
 	</table>
+</div>
+<div class="half-content">
+	<h1>Charts and data</h1>
+	<canvas id="playskips" width="300px" height="100%"></canvas>
+	<canvas id="popular" width="300px" height="100%"></canvas>
 </div>

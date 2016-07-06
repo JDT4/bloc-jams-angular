@@ -1,34 +1,36 @@
 (function () {
 	function Metric($filter) {
-		var songPlays = [];
-
+		var localSongData = JSON.parse(localStorage.getItem('songData'));
+		var songPlays = localSongData ? localSongData : [];
+		console.log(songPlays);
 		return {
 			getSongs: function () {
 				return songPlays;
 			},
-
 			//Play data
 			trackSongs: function (data) {
-				//Date of last play
-				data.datePlayed = new Date().getTime();
-				//Number of plays
-				data.plays = [];
-				data.plays.push(1);
-				//Push all data
-				songPlays.push(data);
+				if (songPlays[data.currentIndex]) {
+					data.plays = songPlays[data.currentIndex].plays;
+					data.plays++;
+					data.datePlayed = new Date().getTime();
+				} else {
+					data.plays = 1;
+					data.datePlayed = new Date().getTime();
+				};
+				console.log(data.plays);
+				songPlays[data.currentIndex] = data;
+				localStorage.setItem('songData', JSON.stringify(songPlays));
 			},
 			//Skip data
-			skipSongs: function (data, time) {
-				//Date of skip
-				data.dateSkipped = 1; //new Date().getTime();
-				//Time of skip
-				data.timeSkipped = time;
-				console.log(data.timeSkipped);
-				//Number of skips
-				data.skips = [];
-				data.skips.push(1);
-				//Push all data
-				songPlays.push(data);
+			skipSongs: function (data) {
+				if (songPlays[data.currentIndex].skips) {
+					data.skips = songPlays[data.currentIndex].skips;
+					data.skips++;
+				} else {
+					data.skips = 1;
+				};
+				songPlays[data.currentIndex] = data;
+				localStorage.setItem('songData', JSON.stringify(songPlays));
 			}
 		};
 	}
