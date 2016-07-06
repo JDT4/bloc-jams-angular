@@ -1,4 +1,3 @@
-//if song is ended and song is not last of the album index++ 
 (function () {
 	function SongPlayer($rootScope, fixtures, Metric) {
 		var SongPlayer = {};
@@ -52,7 +51,7 @@
 		};
 		SongPlayer.previous = function () {
 			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
-			//Metric.skipSongs(song);
+			Metric.skipSongs(currentAlbum.songs[currentSongIndex]);
 			currentSongIndex--;
 			if (currentSongIndex < 0) {
 				var indexSong = currentAlbum.songs.length - 1;
@@ -66,6 +65,7 @@
 		};
 		SongPlayer.next = function () {
 			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+			Metric.skipSongs(currentAlbum.songs[currentSongIndex]);
 			currentSongIndex++;
 			if (currentSongIndex > currentAlbum.songs.length - 1) {
 				var song = currentAlbum.songs[0];
@@ -74,7 +74,6 @@
 			}
 			setSong(song);
 			SongPlayer.play(song);
-			Metric.skipSongs(song, SongPlayer.currentTime);
 			Metric.trackSongs(song);
 		};
 
