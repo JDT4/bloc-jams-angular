@@ -24,16 +24,23 @@
 				var newObj = {}
 				newObj.y = this.analytic[i].plays;
 				newObj.x = this.analytic[i].skips;
-				newObj.name = this.analytic[i].name;
+				//newObj.label = this.analytic[i].name;
 				newArray.push(newObj);
 			}
 			return newArray;
 		}
 		this.lineData = {
-			labels: this.setLabels(1),
+			labels: this.setLabels(2),
 			datasets: [{
+				label: "Plays",
+				backgroundColor: "#FF6384",
 				borderColor: "#FF6384",
-				data: this.setPoints()
+				data: this.setLabels(3)
+        }, {
+				label: "Skips",
+				backgroundColor: "#36A2EB",
+				borderColor: "#36A2EB",
+				data: this.setLabels(4)
         }]
 		};
 		this.lineOptions = {
@@ -54,13 +61,13 @@
 					{
 						data: this.setLabels(3),
 						backgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56",
-								"#FF6384",
-                "#36A2EB"
-            ],
-        }]
+							"#FF6384",
+							"#36A2EB",
+							"#FFCE56",
+							"#FF6384",
+							"#36A2EB"]
+
+					}]
 			}
 	}
 

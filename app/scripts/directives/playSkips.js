@@ -11,7 +11,7 @@
  				var myChart = new Chart(element, {
  					type: attributes.type,
  					data: scope.data,
- 					options: attributes.options,
+ 					options: attributes.options
  				});
  			}
  		};
