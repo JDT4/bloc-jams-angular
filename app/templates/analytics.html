@@ -1,4 +1,29 @@
-<div>
-	<h1>Analytics</h1>
-	<p>See here.</p>
+<div class="half-content">
+	<h1>All song data</h1>
+	<table class="album-view-song-list">
+		<tr class="album-view-song-item">
+			<td>#</td>
+			<td>Song Name</td>
+			<td>Plays</td>
+			<td>Skips</td>
+			<td>Last played</td>
+		</tr>
+
+		<tr class="album-view-song-item" ng-repeat="song in analytics.analytic | orderBy:currentIndex track by $index">
+			<td>{{song.currentIndex + 1}}</td>
+			<td>{{song.name}}</td>
+			<td>{{song.plays}}</td>
+			<td>{{song.skips}}</td>
+			<td>{{song.datePlayed | date:'dd/MM/yy HH:mm:ss'}}</td>
+
+		</tr>
+	</table>
+</div>
+<div class="half-content">
+	<h1>Charts and data</h1>
+	<h2>Plays vs Skips</h2>
+	<play-skips type="bar" data="analytics.lineData" options="analytics.lineOptions"></play-skips>
+	<h2>Most Played</h2>
+	<most-plays type="pie" data="analytics.pieData"></most-plays>
+
 </div>

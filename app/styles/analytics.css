@@ -1,0 +1,19 @@
+.half-content {
+	width: 50%;
+	box-sizing: border-box;
+	float: left;
+}
+
+.half-content h1,
+.half-content h2 {
+	padding: 0em 1em;
+}
+
+.half-content h2 {
+	margin-left: 1em;
+}
+
+.half-content canvas {
+	box-sizing: border-box;
+	padding: 1em;
+}
