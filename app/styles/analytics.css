@@ -4,8 +4,13 @@
 	float: left;
 }
 
-.half-content h1 {
+.half-content h1,
+.half-content h2 {
 	padding: 0em 1em;
+}
+
+.half-content h2 {
+	margin-left: 1em;
 }
 
 .half-content canvas {

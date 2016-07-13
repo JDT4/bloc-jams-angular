@@ -2,7 +2,6 @@
 	function Metric($filter) {
 		var localSongData = JSON.parse(localStorage.getItem('songData'));
 		var songPlays = localSongData ? localSongData : [];
-		console.log(songPlays);
 		return {
 			getSongs: function () {
 				return songPlays;

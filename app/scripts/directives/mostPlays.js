@@ -1,5 +1,5 @@
  (function () {
- 	function playSkips() {
+ 	function mostPlays() {
  		return {
  			template: "<canvas width='300px' height='100%'></canvas>",
  			restrict: 'E',
@@ -18,5 +18,5 @@
  	}
  	angular
  		.module('blocJams')
- 		.directive('playSkips', [playSkips]);
+ 		.directive('mostPlays', [mostPlays]);
  })();
